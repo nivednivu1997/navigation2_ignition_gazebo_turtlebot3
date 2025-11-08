@@ -24,3 +24,4 @@ Requires
   - `ros-<distro>-nav2-bringup`
   - `ros-<distro>-ros-ign-gazebo`
   - `ros-<distro>-ros-ign-bridge`
+  - `ros-<distro>-turtlebot3-description`
