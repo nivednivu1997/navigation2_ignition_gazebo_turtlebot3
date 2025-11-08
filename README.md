@@ -25,3 +25,36 @@ Requires
   - `ros-<distro>-ros-ign-gazebo`
   - `ros-<distro>-ros-ign-bridge`
   - `ros-<distro>-turtlebot3-description`
+
+---
+
+### ✅ Recent Updates
+
+
+#### **1. Robot State Publisher Update**
+- The `robot_state_publisher.launch.py` was modified to **load the URDF model directly** from  
+  `turtlebot3_description/urdf/turtlebot3_waffle.urdf` instead of the SDF version.
+
+- This change aligns with the current ROS 2 Humble and Ignition Gazebo workflows,  
+  which use URDF as the standard robot description format for `robot_state_publisher`.
+
+#### **2. Namespace Removal in URDF**
+- The original URDF files included `${namespace}` prefixes for all TF frames  
+  (e.g., `namespace_base_link`, `namespace_base_scan`, etc.).
+  base_footprint → base_link → base_scan
+  instead of:
+  turtlebot3/base_footprint → turtlebot3/base_link → turtlebot3/base_scan
+  
+- This makes the TF naming consistent with standard ROS 2 TurtleBot3 setups and  
+simplifies integration with Nav2 and other TF consumers.
+
+---
+
+### 🧩 Summary of Improvements
+| Area | Change | Benefit |
+|------|---------|----------|
+| Robot State Publisher | Use URDF instead of SDF | Compatibility with Humble |
+| TF Frames | Removed `${namespace}` prefixes | Cleaner TF tree, easier debugging |
+
+---
+
