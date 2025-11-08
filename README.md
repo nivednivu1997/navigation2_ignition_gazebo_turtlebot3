@@ -41,8 +41,10 @@ Requires
 #### **2. Namespace Removal in URDF**
 - The original URDF files included `${namespace}` prefixes for all TF frames  
   (e.g., `namespace_base_link`, `namespace_base_scan`, etc.).
+  **After removing the namespace:**
   base_footprint → base_link → base_scan
-  instead of:
+  
+  **Instead of (previously with namespace):**
   turtlebot3/base_footprint → turtlebot3/base_link → turtlebot3/base_scan
   
 - This makes the TF naming consistent with standard ROS 2 TurtleBot3 setups and  
